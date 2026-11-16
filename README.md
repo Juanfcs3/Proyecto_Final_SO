@@ -73,7 +73,7 @@ Medición del 16 de noviembre de 2026 con k6 2.4.0 en Windows y Docker Desktop. 
 
 | Tasa objetivo | Tasa observada | Solicitudes | Reparto por backend (1 / 2 / 3) | p95 HTTP | p99 HTTP | Máximo HTTP | Errores HTTP | Iteraciones descartadas |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 25 req/s | 25,03 req/s | 751 | 250 / 250 / 251 | 6,11 ms | 7,97 ms | 13,80 ms | 0 | 0 |
-| 150 req/s | 150,01 req/s | 4.501 | 1.500 / 1.501 / 1.500 | 4,85 ms | 5,81 ms | 23,57 ms | 0 | 0 |
+| 25 req/s | 25,00 req/s | 750 | 250 / 250 / 250 | 6,25 ms | 7,78 ms | 12,89 ms | 0 | 0 |
+| 150 req/s | 150,01 req/s | 4.501 | 1.501 / 1.500 / 1.500 | 4,82 ms | 5,75 ms | 22,97 ms | 0 | 0 |
 
-Prometheus registró 25,11 y 150,02 req/s en una muestra de cada fase, con una ventana de 15 segundos sobre los contadores de los tres backends. En ambas fases, la diferencia entre réplicas fue de una solicitud. El p95 bajó en la segunda ejecución y el máximo subió. Harían falta varias repeticiones alternando el orden de las fases para atribuir el cambio de latencia a la carga.
+Prometheus registró 25,00 y 149,89 req/s en una muestra de cada fase, con una ventana de 15 segundos sobre los contadores de los tres backends. El reparto fue idéntico en la primera fase y difirió en una solicitud en la segunda. El p95 bajó en la segunda fase y el máximo subió. Harían falta varias repeticiones alternando el orden de las fases para atribuir el cambio de latencia a la carga.
